@@ -23,7 +23,48 @@ public class GrafoDirigido {
         }
     }
 
-    public void insertatElemento(int posicion, int ){
+    public void eliminarElemento(int a) {
 
+        listaAdyacencia[a] = null;
+        for (int i = 0; i < listaAdyacencia.length ; i++) {
+
+        }
+    }
+
+
+    public void insertatElemento(int posicion, int peso, int elemento) {
+        listaAdyacencia[posicion].insertar(peso, elemento);
+    }
+
+    public String mostrarListaAdyacencia() {
+        String a = "";
+        for (int i = 0; i < listaAdyacencia.length; i++) {
+            a += listaAdyacencia[i].toString() + "\n";
+        }
+        return a;
+    }
+
+    public Lista[] getListaAdyacencia() {
+        return listaAdyacencia;
+    }
+
+    public void setListaAdyacencia(Lista[] listaAdyacencia) {
+        this.listaAdyacencia = listaAdyacencia;
+    }
+
+    public int getVertices() {
+        return vertices;
+    }
+
+    public void setVertices(int vertices) {
+        this.vertices = vertices;
+    }
+
+    public int getArcos() {
+        return arcos;
+    }
+
+    public void setArcos(int arcos) {
+        this.arcos = arcos;
     }
 }

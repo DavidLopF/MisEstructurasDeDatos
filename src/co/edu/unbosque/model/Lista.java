@@ -42,4 +42,19 @@ public class Lista {
         }
     }
 
+    public void eliminar(int a) {
+        if (!listaVacia()) {
+            Nodo temp = primero.getSiguiente();
+            Nodo ante = primero;
+            while (temp.getSiguiente() != null) {
+                if (temp.getVertice() == a) {
+                    temp = null;
+                    ante.setSiguiente(null);
+                }
+
+                temp = temp.getSiguiente();
+                ante = temp.getSiguiente();
+            }
+        }
+    }
 }
