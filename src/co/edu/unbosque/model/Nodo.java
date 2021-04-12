@@ -38,6 +38,6 @@ public class Nodo {
 
     @Override
     public String toString() {
-        return "vertice: " + vertice + " , peso :" + peso;
+        return "vertice: " + vertice + "      , peso :" + peso;
     }
 }
