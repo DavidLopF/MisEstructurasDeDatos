@@ -24,11 +24,20 @@ public class GrafoDirigido {
     }
 
     public void eliminarElemento(int a) {
-
         listaAdyacencia[a] = null;
-        for (int i = 0; i < listaAdyacencia.length ; i++) {
-
+        for (int i = 0; i < listaAdyacencia.length; i++) {
+            if (listaAdyacencia[i] != null) {
+                listaAdyacencia[i].eliminar(a);
+            }
         }
+    }
+
+    public int indicarCaminosXY(int x, int y) {
+        return listaAdyacencia[x].busqueda(y);
+    }
+
+    public int caminoMenosCostoso(int a , int b){
+        return ;
     }
 
 
@@ -39,7 +48,9 @@ public class GrafoDirigido {
     public String mostrarListaAdyacencia() {
         String a = "";
         for (int i = 0; i < listaAdyacencia.length; i++) {
-            a += listaAdyacencia[i].toString() + "\n";
+            if (listaAdyacencia[i] != null) {
+                a += listaAdyacencia[i].toString() + "\n";
+            }
         }
         return a;
     }

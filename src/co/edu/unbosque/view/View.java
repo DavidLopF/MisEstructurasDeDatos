@@ -18,9 +18,10 @@ public class View {
         int num = 0;
         if (esNumeroInt(a)) {
             num = Integer.parseInt(a);
-            System.out.println("DATO INGRESADO CON EXITO,");
+            System.out.println("DATO INGRESADO CON EXITO.");
         } else {
             System.out.println("ERROR.. NO ES ENTERO.");
+            capturarInt(titulo);
         }
 
         return num;
@@ -47,9 +48,9 @@ public class View {
     }
 
     public String menuGrafos(String a) {
-        Object[] opciones = {"1. Eliminar elemento",
+        Object[] opciones = {"1. Eliminar elemento y todos sus arcos.",
                 "2. indicar si existe un camino entre un Nodo X y otro Nodo y", "3. Ruta menos costosa entre nodo x a nodo y", "Salir"};
-        Object opcion = JOptionPane.showInputDialog(null, "El grafo representado en lista de adyacencia es:  " + "\n" + a + "\n\n\nSelecciona un operacion a realizar:    ", "Elegir",
+        Object opcion = JOptionPane.showInputDialog(null, "El grafo representado en lista de adyacencia es:\n" + "\n" + a + "\n\nSelecciona un operacion a realizar:    ", "Elegir",
                 JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]);
         if (opcion == null) {
             mostrarMensaje("Hasta Pronto");

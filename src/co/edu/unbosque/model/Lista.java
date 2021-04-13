@@ -42,19 +42,39 @@ public class Lista {
         }
     }
 
+    public int busqueda(int a) {
+        int cont = 1;
+        Nodo temp = primero;
+        while (temp != null) {
+            if (a == temp.getVertice()) {
+                cont++;
+            }
+            temp = temp.getSiguiente();
+        }
+        return cont;
+    }
+
     public void eliminar(int a) {
         if (!listaVacia()) {
             Nodo temp = primero.getSiguiente();
             Nodo ante = primero;
-            while (temp.getSiguiente() != null) {
+
+            while (temp != null) {
                 if (temp.getVertice() == a) {
                     temp = null;
                     ante.setSiguiente(null);
+                    return;
                 }
 
                 temp = temp.getSiguiente();
-                ante = temp.getSiguiente();
+                ante = ante.getSiguiente();
             }
         }
     }
+
+    public int caminoCorto(){
+
+    }
+
+
 }
